@@ -1,0 +1,76 @@
+
+
+[
+  {
+    "serviceId": 1,
+    "serviceName": "Winter Coat Fitting for Dogs",
+    "providerName": "PawCare Studio",
+    "providerEmail": "info@pawcare.com",
+    "price": 25,
+    "rating": 4.9,
+    "slotsAvailable": 4,
+    "description": "Custom coat fitting and warm outfit options to keep your dog comfortable in the cold.",
+    "image": "https://i.postimg.cc/g2W2wX7N/winter-dog-fitting.jpg",
+    "category": "Clothing"
+  },
+  {
+    "serviceId": 2,
+    "serviceName": "Winter Grooming & Paw Treatment",
+    "providerName": "CozyPets Grooming",
+    "providerEmail": "hello@cozypets.com",
+    "price": 30,
+    "rating": 4.8,
+    "slotsAvailable": 3,
+    "description": "Professional grooming with moisturizing paw balm and winter-safe shampoo.",
+    "image": "https://i.postimg.cc/k44r6q9z/winter-grooming-paws-treatment.jpg",
+    "category": "Grooming"
+  },
+  {
+    "serviceId": 3,
+    "serviceName": "Heated Bed Setup",
+    "providerName": "WarmNest Supplies",
+    "providerEmail": "contact@warmnest.com",
+    "price": 40,
+    "rating": 4.7,
+    "slotsAvailable": 2,
+    "description": "Installation of a cozy heated bed for your pet's winter comfort.",
+    "image": "https://i.postimg.cc/mkpgz80S/Heated-Bed-Setup.jpg",
+    "category": "Accessories"
+  },
+  {
+    "serviceId": 4,
+    "serviceName": "Snow Boot Fitting",
+    "providerName": "PawGear Outfitters",
+    "providerEmail": "support@pawgear.com",
+    "price": 20,
+    "rating": 4.6,
+    "slotsAvailable": 5,
+    "description": "Custom-fitted snow boots to protect your dog's paws from ice and salt.",
+    "image": "https://i.postimg.cc/nLfcDsPp/Snow-Boot-Fitting.jpg",
+    "category": "Clothing"
+  },
+  {
+    "serviceId": 5,
+    "serviceName": "Winter Diet Consultation",
+    "providerName": "PetHealth Experts",
+    "providerEmail": "info@pethealth.com",
+    "price": 35,
+    "rating": 4.9,
+    "slotsAvailable": 1,
+    "description": "Personalized diet plan to keep your pet energized during winter months.",
+    "image": "https://i.postimg.cc/pT2Wswvf/Winter-Diet-Consultation.jpg",
+    "category": "Health"
+  },
+  {
+    "serviceId": 6,
+    "serviceName": "Indoor Play Session",
+    "providerName": "HappyPaws Activity",
+    "providerEmail": "book@happypaws.com",
+    "price": 15,
+    "rating": 4.5,
+    "slotsAvailable": 6,
+    "description": "Supervised indoor playtime to keep your dog active during cold weather.",
+    "image": "https://i.postimg.cc/PfSxR5Pv/Indoor-Play-Session.jpg",
+    "category": "Activity"
+  }
+]
