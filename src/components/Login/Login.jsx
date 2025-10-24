@@ -4,72 +4,79 @@ import { AuthContext } from "../../main";
 import toast from "react-hot-toast";
 
 const Login = () => {
-    const { loginUser, googleLogin, setLoading, setUser } = use(AuthContext);
+  const { loginUser, googleLogin, setLoading, setUser } = use(AuthContext);
 
-    const location = useLocation();
-    const navigate = useNavigate();
+  const location = useLocation();
+  const navigate = useNavigate();
 
-    const handleLogin = (event) => {
-        event.preventDefault();
-        const form = event.target;
-        const email = form.email.value;
-        const password = form.password.value;
+  const handleLogin = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
 
-        loginUser(email, password)
-            .then((result) => {
-                const user = result.user;
-                setUser(user);
-                toast.success('User logged in successfully!');
-                form.reset();
-                navigate(location?.state?.from?.pathname || "/");
-                setLoading(false);
-            })
-            .catch((error) => {
-                console.error(error);
-                toast.error(error.message);
-                setLoading(false);
-            });
-    };
+    loginUser(email, password)
+      .then((result) => {
+        const user = result.user;
+        setUser(user);
+        toast.success("User logged in successfully!");
+        form.reset();
+        navigate(location?.state?.from?.pathname || "/");
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error(error);
+        toast.error(error.message);
+        setLoading(false);
+      });
+  };
 
-    const handleGoogleLogin = () => {
-        googleLogin()
-            .then((result) => {
-                const user = result.user;
-                setUser(user);
-                toast.success('User logged in successfully!');
-                navigate(location?.state?.from?.pathname || "/");
-                setLoading(false);
-            })
-            .catch((error) => {
-                console.error(error);
-                toast.error(error.message);
-                setLoading(false);
-            });
-    };
+  const handleGoogleLogin = () => {
+    googleLogin()
+      .then((result) => {
+        const user = result.user;
+        setUser(user);
+        toast.success("User logged in successfully!");
+        navigate(location?.state?.from?.pathname || "/");
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error(error);
+        toast.error(error.message);
+        setLoading(false);
+      });
+  };
 
   return (
     <div className=" bg-emerald-50  text-center min-h-screen flex items-center justify-center">
-      <div className="p-4 bg-white rounded-lg shadow-sm space-y-2 w-1/3 mx-auto border border-base-300">
+      <div className="p-6 bg-white rounded-lg shadow-sm space-y-3 w-1/3 mx-auto border border-base-300">
         <h1 className="text-2xl font-bold text-emerald-500">Login here!</h1>
         <form onSubmit={handleLogin} className=" bg-base-100  space-y-2">
-          <input type="email" className="input" name="email" placeholder="Your Email" />
-                <input
-                  type="password"
-                  className="input"
-                  name="password"
-                  placeholder="Your Password"
-                />
-                <div>
-                  <a className="link link-hover  text-blue-600 font-medium">
-                    Forgot password?
-                  </a>
-                </div>
-                <button className="btn bg-emerald-400 hover:bg-emerald-600 text-white">
-                  Login
-                </button>
-            
-          </form>
-        
+          <input
+            type="email"
+            className="input"
+            name="email"
+            placeholder="Your Email"
+          />
+          <input
+            type="password"
+            className="input"
+            name="password"
+            placeholder="Your Password"
+          />
+          <div>
+            <Link
+              to="/forgot-password"
+              className="link link-hover text-blue-600 font-medium"
+            >
+              Forgot password?
+            </Link>
+          </div>
+          <button className="btn bg-emerald-400 hover:bg-emerald-600 text-white">
+            Login
+          </button>
+        </form>
+
         <div>
           New here?{" "}
           <Link to="/register" className="text-blue-600 font-medium underline">
@@ -80,7 +87,10 @@ const Login = () => {
           <p>or</p>
         </div>
 
-        <button onClick={handleGoogleLogin} className="btn bg-white text-black border-[#e5e5e5]">
+        <button
+          onClick={handleGoogleLogin}
+          className="btn bg-white text-black border-emerald-300"
+        >
           <svg
             aria-label="Google logo"
             width="16"

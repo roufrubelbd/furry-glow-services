@@ -17,6 +17,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import AuthProvider from "./AuthProvider/AuthProvider.jsx";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute.jsx";
+import ForgetPassword from "./components/ForgetPassword/ForgetPassword.jsx";
 
 export const AuthContext = createContext(null);
 
@@ -53,6 +54,10 @@ const router = createBrowserRouter([
       {
         path: "/login",
         Component: Login,
+      },
+      {
+        path: "//forgot-password",
+        Component: ForgetPassword,
       },
       {
         path: "/register",

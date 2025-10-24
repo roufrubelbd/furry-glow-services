@@ -6,9 +6,12 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
+  updateProfile,
+  sendPasswordResetEmail,
 } from "firebase/auth";
 import { auth } from "../firebase/firebase.init";
 import { AuthContext } from "../main";
+import toast from "react-hot-toast";
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
@@ -31,6 +34,31 @@ const AuthProvider = ({ children }) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
 
+  const updateUserProfile = (name, photoURL) => {
+    setLoading(true);
+    if (!auth.currentUser) {
+      toast.error("No user logged in");
+      return; 
+    }
+    return updateProfile(auth.currentUser, {
+      displayName: name,
+      photoURL: photoURL,
+    }).then(() => {
+      setUser({
+        ...auth.currentUser,
+        displayName: name,
+        photoURL,
+      });
+      setLoading(false);
+    });
+  };
+
+  const resetPassword = (email) => {
+  setLoading(true);
+  return sendPasswordResetEmail(auth, email);
+};
+
+
   const logOutUser = () => {
     setLoading(true);
     return signOut(auth);
@@ -40,7 +68,7 @@ const AuthProvider = ({ children }) => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
       setLoading(false);
-    })    
+    });
     return () => unsubscribe();
   }, []);
 
@@ -52,6 +80,8 @@ const AuthProvider = ({ children }) => {
     googleLogin,
     createUser,
     loginUser,
+    updateUserProfile,
+    resetPassword,
     logOutUser,
   };
 

@@ -30,7 +30,7 @@ const HomeBanner = () => {
   ];
 
   return (
-    <div className="w-full ">
+    <div className="w-full mb-20">
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         navigation
@@ -56,7 +56,7 @@ const HomeBanner = () => {
                     {slide.subtitle}
                   </p>
                   <Link to="/services">
-                    <button className="btn bg-emerald-500 mt-5 animate__animated animate__fadeInUp text-white hover:bg-emerald-600">
+                    <button className="btn bg-emerald-500 mt-5  text-white hover:bg-emerald-600">
                     Explore Now
                   </button>
                   </Link>

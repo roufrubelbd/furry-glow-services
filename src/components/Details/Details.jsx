@@ -19,62 +19,59 @@ const Details = () => {
 
   const handleBookService = (event) => {
     event.preventDefault();
-    const name = event.target.name.value;
-    const email = event.target.email.value;
-
-   toast.success(`Service booked successfully for ${name}! 
-    Confirmation sent to ${email}.`);
+    // const name = event.target.name.value;
+    // const email = event.target.email.value;
+    toast.success("Service booked successfully.");
     event.target.reset();
-  }
+  };
   return (
-    <div className="card bg-base-100 border border-base-300 p-4 w-8/12 mx-auto my-10">
-      <div>
-        <figure>
-          <img src={image} alt={serviceName} className="w-1/3 object-cover" />
-        </figure>
-        <div className="flex justify-left gap-10 items-center">
-          <div>
-            <p>{serviceName}</p>
-            <p>{providerName}</p>
-          </div>
-          <div>
-            <p>{providerEmail}</p>
-            <p>{category}</p>
-          </div>
+    <div className=" bg-emerald-50 p-8 w-11/12 mx-auto my-10">
+      <div className="space-y-4">
+          <img
+            src={image}
+            alt={serviceName}
+            className="w-2/3  flex justify-start rounded-lg"
+          />
+        <div className="space-y-1">          
+            <p className="text-2xl text-emerald-600 font-medium">{serviceName}</p>
+            <p> Provider Name: {providerName}</p>          
+            <p>Provider Email: {providerEmail}</p>
+            <p>Category: {category}</p>          
         </div>
         <div className="mt-4 ">
-          <p className="font-medium text-sm">Price: ${price}</p>
-          <p className="font-medium text-sm">Rating: {rating}</p>
-          <p className="font-medium text-sm">
+          <p className="font-medium ">Price: ${price}</p>
+          <p className="font-medium ">Rating: {rating}</p>
+          <p className="font-medium ">
             Slots Available: {slotsAvailable}
           </p>
         </div>
         <p className="">{description}</p>
       </div>
-      <div className="p-6 shadow-sm rounded-lg bg-emerald-300 w-2/5 mt-4">
-        <h4 className="font-medium text-center mb-2 text-emerald-800">Book Service</h4>
-        <form className="space-y-2" onSubmit={handleBookService}>
+      <div className="p-6 shadow-sm rounded-lg bg-base-100 border border-emerald-200 w-2/5 mt-4">
+        <h4 className="font-bold text-xl text-center mb-2 text-emerald-600">
+          Book Service
+        </h4>
+        <form className="space-y-4" onSubmit={handleBookService}>
           <input
             type="text"
-            placeholder="your name"
+            placeholder="Your name"
             name="name"
             required
-            className="w-full py-1 px-3 bg-base-100 rounded-lg"
+            className="w-full py-1 px-3 bg-base-100 rounded-lg border border-emerald-200"
           />{" "}
           <br />
           <input
             type="email"
-            placeholder="your email"
+            placeholder="Your email"
             name="email"
             required
-            className="w-full py-1 px-3 bg-base-100 rounded-lg "
+            className="w-full py-1 px-3 bg-base-100 rounded-lg border border-emerald-200 "
           />
           <br />
           <input
-
             type="submit"
             value="Book Now"
-            className="font-medium text-center btn btn-outline btn-sm w-full mt-2 text-emerald-800"
+            className="font-medium text-center btn btn-outline w-full mt-2 text-emerald-600"
           />
         </form>
       </div>

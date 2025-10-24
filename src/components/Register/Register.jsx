@@ -1,76 +1,100 @@
-import React from 'react';
-import { use } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router';
-import { AuthContext } from '../../main';
-import { toast } from 'react-hot-toast';
+import React from "react";
+import { use } from "react";
+import { Link, useLocation, useNavigate } from "react-router";
+import { AuthContext } from "../../main";
+import { toast } from "react-hot-toast";
 
 const Register = () => {
-    const { createUser, googleLogin, setLoading, setUser } = use(AuthContext);
+  const { createUser, googleLogin, setLoading, setUser } = use(AuthContext);
 
-    const navigate = useNavigate();
-    const location = useLocation();
+  const navigate = useNavigate();
+  const location = useLocation();
 
-    const handleRegister = (event) => {
-        event.preventDefault();
-        const form = event.target;
-        const email = form.email.value;
-        const password = form.password.value;
+  const handleRegister = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
 
-        createUser(email, password)
-        .then(result => {
-            const user = result.user;
-            setUser(user);
-            toast.success('User registered successfully!');
-            form.reset();            
-            navigate('/');
-            setLoading(false);
-        })
-        .catch(error => {
-            toast.error(error.message);
-            setLoading(false);
-        });
-    };
+    if (!/[A-Z]/.test(password)) {
+      toast.error("Password must contain at least one uppercase letter");
+      return;
+    }
+    if (!/[a-z]/.test(password)) {
+      toast.error("Password must contain at least one lowercase letter");
+      return;
+    }
+    if (password.length < 6) {
+      toast.error("Password must be at least 6 characters long");
+      return;
+    }
 
-    const handleGoogleLogin = () => {
-        googleLogin()
-            .then((result) => {
-                const user = result.user;
-                setUser(user);
-                toast.success('User logged in successfully!');
-                navigate(location?.state?.from?.pathname || "/");
-                setLoading(false);
-            })
-            .catch((error) => {
-                console.error(error);
-                toast.error(error.message);
-                setLoading(false);
-            });
-    };
+    createUser(email, password)
+      .then((result) => {
+        const user = result.user;
+        setUser(user);
+        toast.success("User registered successfully!");
+        form.reset();
+        navigate("/");
+        setLoading(false);
+      })
+      .catch((error) => {
+        toast.error(error.message);
+        setLoading(false);
+      });
+  };
 
-    return (
-        <div className=" bg-emerald-50  text-center min-h-screen flex items-center justify-center">
-      <div className="p-4 bg-white rounded-lg shadow-sm space-y-2 w-1/3 mx-auto border border-base-300">
+  const handleGoogleLogin = () => {
+    googleLogin()
+      .then((result) => {
+        const user = result.user;
+        setUser(user);
+        toast.success("User logged in successfully!");
+        navigate(location?.state?.from?.pathname || "/");
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error(error);
+        toast.error(error.message);
+        setLoading(false);
+      });
+  };
+
+  return (
+    <div className=" bg-emerald-50  text-center min-h-screen flex items-center justify-center">
+      <div className="p-6 bg-white rounded-lg shadow-sm space-y-2 w-1/3 mx-auto border border-base-300">
         <h1 className="text-2xl font-bold text-emerald-500">Register here!</h1>
-        <form onSubmit={handleRegister} className=" bg-base-100  space-y-2">            
-          <input type="text" name='name' className="input" placeholder="Your Name" />
-          <input type="email" name='email' className="input" placeholder="Your Email" />
-          <input type="text" name='photoURL' className="input" placeholder="Your Photo-URL" />
+        <form onSubmit={handleRegister} className=" bg-base-100  space-y-2">
+          <input
+            type="text"
+            name="name"
+            className="input"
+            placeholder="Your Name"
+          />
+          <input
+            type="email"
+            name="email"
+            className="input"
+            placeholder="Your Email"
+          />
+          <input
+            type="text"
+            name="photoURL"
+            className="input"
+            placeholder="Your Photo-URL"
+          />
           <input
             type="password"
-            name='password'
+            name="password"
             className="input"
             placeholder="Your Password"
-          />
-                <div>
-                  <a className="link link-hover  text-blue-600 font-medium">
-                    Forgot password?
-                  </a>
-                </div>
-                <button className="btn bg-emerald-400 hover:bg-emerald-600 text-white">
-                  Register
-                </button>            
-          </form>
-        
+          />{" "}
+          <br />
+          <button className="btn bg-emerald-400 mt-3 hover:bg-emerald-600 text-white">
+            Register
+          </button>
+        </form>
+
         <div>
           Already have an account?{" "}
           <Link to="/login" className="text-blue-600 font-medium underline">
@@ -81,7 +105,10 @@ const Register = () => {
           <p>or</p>
         </div>
 
-        <button onClick={handleGoogleLogin} className="btn bg-white text-black border-[#e5e5e5]">
+        <button
+          onClick={handleGoogleLogin}
+          className="btn bg-white text-black border-emerald-300"
+        >
           <svg
             aria-label="Google logo"
             width="16"
@@ -113,7 +140,7 @@ const Register = () => {
         </button>
       </div>
     </div>
-    );
+  );
 };
 
 export default Register;
