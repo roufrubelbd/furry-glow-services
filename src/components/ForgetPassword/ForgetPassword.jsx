@@ -1,10 +1,13 @@
 import React, { useState, use } from "react";
 import toast from "react-hot-toast";
 import { AuthContext } from "../../main";
+import { useLocation } from "react-router";
 
 const ForgotPassword = () => {
   const { resetPassword } = use(AuthContext);
-  const [email, setEmail] = useState("");
+   const location = useLocation();
+  const prefilledEmail = location.state?.email || "";
+  const [email, setEmail] = useState(prefilledEmail);
 
   const handleResetPassword = (event) => {
     event.preventDefault();
@@ -34,7 +37,7 @@ const ForgotPassword = () => {
         <form onSubmit={handleResetPassword} className="space-y-4">
           <input
             type="email"
-            placeholder="Enter your email"
+            placeholder="Enter your registered email"
             className="input input-bordered w-full"
             value={email}
             onChange={(e) => setEmail(e.target.value)}

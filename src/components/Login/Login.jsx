@@ -1,10 +1,13 @@
-import React, { use } from "react";
+import React, { use, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../../main";
 import toast from "react-hot-toast";
+import { EyeIcon, EyeOffIcon } from "lucide-react";
 
 const Login = () => {
   const { loginUser, googleLogin, setLoading, setUser } = use(AuthContext);
+  const [email, setEmail] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -12,7 +15,7 @@ const Login = () => {
   const handleLogin = (event) => {
     event.preventDefault();
     const form = event.target;
-    const email = form.email.value;
+    // const email = form.email.value;
     const password = form.password.value;
 
     loginUser(email, password)
@@ -54,19 +57,35 @@ const Login = () => {
         <form onSubmit={handleLogin} className=" bg-base-100  space-y-2">
           <input
             type="email"
-            className="input"
+            className="input w-full"
             name="email"
             placeholder="Your Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
-          <input
-            type="password"
-            className="input"
-            name="password"
-            placeholder="Your Password"
-          />
+          <div className="relative">
+            <input
+              type={showPassword ? "text" : "password"}
+              className="input w-full pr-10"
+              name="password"
+              placeholder="Your Password"
+            />
+            <button
+              type="button"
+              onClick={() => setShowPassword(!showPassword)}
+              className="absolute right-3 top-3 text-gray-500 hover:text-emerald-600"
+            >
+              {showPassword ? (
+                <EyeOffIcon size={20} />
+              ) : (
+                <EyeIcon size={20} />
+              )}
+            </button>
+          </div>
           <div>
             <Link
               to="/forgot-password"
+              state={{ email }}
               className="link link-hover text-blue-600 font-medium"
             >
               Forgot password?

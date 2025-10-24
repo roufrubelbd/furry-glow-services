@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { use } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../../main";
 import { toast } from "react-hot-toast";
+import { EyeIcon, EyeOffIcon } from "lucide-react";
 
 const Register = () => {
   const { createUser, googleLogin, setLoading, setUser } = use(AuthContext);
+  const [showPassword, setShowPassword] = useState(false);
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -68,27 +70,36 @@ const Register = () => {
           <input
             type="text"
             name="name"
-            className="input"
+            className="input w-full"
             placeholder="Your Name"
           />
           <input
             type="email"
             name="email"
-            className="input"
+            className="input w-full"
             placeholder="Your Email"
           />
           <input
             type="text"
             name="photoURL"
-            className="input"
+            className="input w-full"
             placeholder="Your Photo-URL"
           />
-          <input
-            type="password"
-            name="password"
-            className="input"
-            placeholder="Your Password"
-          />{" "}
+          <div className="relative">
+            <input
+              type={showPassword ? "text" : "password"}
+              name="password"
+              placeholder="Password"
+              className="input w-full pr-10"
+            />
+            <button
+              type="button"
+              onClick={() => setShowPassword(!showPassword)}
+              className="absolute right-3 top-3 text-gray-500 hover:text-emerald-600"
+            >
+              {showPassword ? <EyeOffIcon size={20} /> : <EyeIcon size={20} />}
+            </button>
+          </div>{" "}
           <br />
           <button className="btn bg-emerald-400 mt-3 hover:bg-emerald-600 text-white">
             Register

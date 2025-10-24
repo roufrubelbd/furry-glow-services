@@ -1,27 +1,14 @@
-import React from "react";
-
-const stories = [
-  {
-    id: 1,
-    image: "https://i.postimg.cc/Dzx47mjX/adopt1.jpg",
-    title: "Bella found her forever home 🐶",
-    desc: "WarmPaws helped connect Bella with her loving new family. She’s happier than ever!",
-  },
-  {
-    id: 2,
-    image: "https://i.postimg.cc/5N9qY3XM/adopt2.jpg",
-    title: "Max’s second chance 🐕‍🦺",
-    desc: "After months of care, Max found a warm, cozy home through our adoption program.",
-  },
-  {
-    id: 3,
-    image: "https://i.postimg.cc/1Rg3tc8B/adopt3.jpg",
-    title: "Whiskers joins a big family 🐱",
-    desc: "Whiskers is now surrounded by kids and playtime all day long!",
-  },
-];
+import React, { useEffect, useState } from "react";
 
 const Stories = () => {
+  const [stories, setStories] = useState([]);
+
+  useEffect(() => {
+    fetch("/stories.json")
+      .then((res) => res.json())
+      .then((data) => setStories(data));
+  }, []);
+
   return (
     <div className="bg-emerald-50 py-16 my-20">
       <div className="w-11/12 mx-auto text-center">
