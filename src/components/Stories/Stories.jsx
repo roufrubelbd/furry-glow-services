@@ -12,10 +12,10 @@ const Stories = () => {
   return (
     <div className="bg-emerald-50 py-16 my-20">
       <div className="w-11/12 mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-emerald-600 mb-8">
+        <h2 className="text-3xl md:text-4xl lg:text-4xl font-bold text-emerald-600 mb-8">
           Adoption Success Stories
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6">
           {stories.map((story) => (
             <div
               key={story.id}

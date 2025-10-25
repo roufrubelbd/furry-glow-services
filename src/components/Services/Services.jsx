@@ -9,7 +9,7 @@ const Services = () => {
         Popular Winter Pet Care Services
       </h1>
 
-      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
+      <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
         {services.map((service, index) => (
           <div
             key={service.serviceId}
