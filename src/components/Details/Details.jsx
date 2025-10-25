@@ -30,7 +30,7 @@ const Details = () => {
           <img
             src={image}
             alt={serviceName}
-            className="w-2/3  flex justify-start rounded-lg"
+            className="w-3/4 md:w-2/3 lg:w-3/4  flex justify-start rounded-lg"
           />
         <div className="space-y-1">          
             <p className="text-2xl text-emerald-600 font-medium">{serviceName}</p>
@@ -47,7 +47,7 @@ const Details = () => {
         </div>
         <p className="">{description}</p>
       </div>
-      <div className="p-6 shadow-sm rounded-lg bg-base-100 border border-emerald-200 w-2/5 mt-4">
+      <div className="p-6 shadow-sm rounded-lg bg-base-100 border border-emerald-200 w-4/5 md:w-2/5 lg:w-2/6 mt-4">
         <h4 className="font-bold text-xl text-center mb-2 text-emerald-600">
           Book Service
         </h4>

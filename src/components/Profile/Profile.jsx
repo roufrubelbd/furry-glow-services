@@ -24,7 +24,7 @@ const Profile = () => {
   };
 
   return (
-    <div className="bg-emerald-50 w-11/12 mx-auto flex flex-col justify-center items-center py-10 h-screen">
+    <div className="bg-emerald-50 w-11/12 mx-auto flex flex-col justify-center items-center py-2 md:py-10 lg:py-10 h-screen">
       <div className="p-6 bg-base-100 rounded-2xl border border-emerald-200 flex flex-col justify-center items-center text-center space-y-4">
         <h3 className="font-bold text-emerald-600">My profile page</h3>
 

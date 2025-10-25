@@ -52,7 +52,7 @@ const Login = () => {
 
   return (
     <div className=" bg-emerald-50  text-center min-h-screen flex items-center justify-center">
-      <div className="p-6 bg-white rounded-lg shadow-sm space-y-3 w-1/3 mx-auto border border-base-300">
+      <div className="p-6 bg-white rounded-lg shadow-sm space-y-3 w-4/5 md:w-1/3 lg:w-1/3 mx-auto border border-base-300">
         <h1 className="text-2xl font-bold text-emerald-500">Login here!</h1>
         <form onSubmit={handleLogin} className=" bg-base-100  space-y-2">
           <input
@@ -75,11 +75,7 @@ const Login = () => {
               onClick={() => setShowPassword(!showPassword)}
               className="absolute right-3 top-3 text-gray-500 hover:text-emerald-600"
             >
-              {showPassword ? (
-                <EyeOffIcon size={20} />
-              ) : (
-                <EyeIcon size={20} />
-              )}
+              {showPassword ? <EyeOffIcon size={20} /> : <EyeIcon size={20} />}
             </button>
           </div>
           <div>
