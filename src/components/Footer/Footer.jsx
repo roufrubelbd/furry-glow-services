@@ -11,7 +11,8 @@ const Footer = () => {
             Pet Winter Care
           </h2>
           <p className="text-sm text-emerald-700">
-            Keeping your pets cozy, happy, and healthy through every cold season.
+            Keeping your pets cozy, happy, and healthy through every cold
+            season.
           </p>
         </div>
 
@@ -118,7 +119,8 @@ const Footer = () => {
 
       {/* Bottom Bar */}
       <div className="bg-emerald-100 py-3 text-center text-sm text-emerald-700">
-        &copy; {new Date().getFullYear()} Pet Winter Care. All rights reserved.
+        &copy; {new Date().getFullYear()} WARMPAWS @Pet Winter Care. All rights
+        reserved.
       </div>
     </footer>
   );
