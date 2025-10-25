@@ -4,8 +4,8 @@ import { AuthContext } from "../../main";
 import { useLocation } from "react-router";
 
 const ForgotPassword = () => {
-  const { resetPassword } = use(AuthContext);
-   const location = useLocation();
+  const { resetPassword, setLoading } = use(AuthContext);
+  const location = useLocation();
   const prefilledEmail = location.state?.email || "";
   const [email, setEmail] = useState(prefilledEmail);
 
@@ -20,10 +20,13 @@ const ForgotPassword = () => {
     resetPassword(email)
       .then(() => {
         toast.success("Password reset email sent!");
-        window.location.href = "https://mail.google.com";
+        // window.location.href = "https://mail.google.com";
+        window.open("https://mail.google.com", "_blank", "noopener,noreferrer");
+        setLoading(false);
       })
       .catch((error) => {
         toast.error(error.message);
+        setLoading(false);
       });
   };
 
