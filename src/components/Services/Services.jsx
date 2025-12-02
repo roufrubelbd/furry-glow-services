@@ -1,19 +1,19 @@
-import React from 'react';
-import { Link, useLoaderData } from 'react-router';
+import { GrView } from "react-icons/gr";
+import { Link, useLoaderData } from "react-router";
 
 const Services = () => {
-    const services = useLoaderData();
-    return (
-        <div className="min-h-screen bg-base-200 py-10 px-4">
-      <h1 className="text-3xl font-bold text-center mb-10 text-blue-600 animate__animated animate__fadeInUp animate__delay-1s">
+  const services = useLoaderData();
+  return (
+    <div className="min-h-screen bg-green-50 pt-2 pb-6 w-11/12 mx-auto px-2">
+      <h1 className="text-xl md:text-3xl font-medium text-center mb-6 text-green-600 animate__animated animate__fadeInUp animate__delay-1s">
         Popular Winter Pet Care Services
       </h1>
 
-      <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
+      <div className="grid gap-4 grid-cols-1 md:grid-cols-4 max-w-7xl mx-auto">
         {services.map((service, index) => (
           <div
             key={service.serviceId}
-            className={`card bg-base-100 shadow-xl border border-base-300 p-4 animate__animated animate__fadeInUp animate__delay-${
+            className={`flex flex-col card bg-base-100 shadow transition transform hover:scale-102 animate__animated animate__fadeInUp animate__delay-${
               index + 1
             }s`}
           >
@@ -21,20 +21,19 @@ const Services = () => {
               <img
                 src={service.image}
                 alt={service.serviceName}
-                className="h-56 w-full object-cover"
+                className="h-40 w-full object-cover"
               />
             </figure>
             <div className="card-body">
-              <h2 className="card-title text-blue-600">{service.serviceName}</h2>
+              <h2 className="card-title text-green-600">
+                {service.serviceName}
+              </h2>
 
-              <div className="mt-4 flex justify-between items-center">
+              <div className="flex justify-between items-center flex-1">
                 <p className="font-medium text-sm">Price: ${service.price}</p>
-                <p className="font-medium text-sm">Rating: {service.rating}</p>
-              </div>
-              <div className="card-actions mt-2 justify-center">
                 <Link to={`/services/${service.serviceId}`}>
-                  <button className="btn bg-emerald-500 text-white btn-sm">
-                    View Details
+                  <button className="btn bg-amber-200 text-green-600 btn-xs hover:bg-green-600 hover:text-white">
+                    <GrView size={12} /> See More
                   </button>
                 </Link>
               </div>
@@ -43,7 +42,7 @@ const Services = () => {
         ))}
       </div>
     </div>
-    );
+  );
 };
 
 export default Services;

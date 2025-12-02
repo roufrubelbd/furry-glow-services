@@ -1,5 +1,3 @@
-
-
 [
   {
     "serviceId": 1,
@@ -9,9 +7,13 @@
     "price": 25,
     "rating": 4.9,
     "slotsAvailable": 4,
-    "description": "Custom coat fitting and warm outfit options to keep your dog comfortable in the cold.",
-    "image": "https://i.postimg.cc/g2W2wX7N/winter-dog-fitting.jpg",
-    "category": "Clothing"
+    "description": "Custom coat fitting and warm outfit options to keep your dog comfortable in the cold. Our specialists take precise measurements to ensure a snug yet flexible fit. We offer a variety of insulated fabrics designed to handle extreme winter temperatures. Every coat is adjusted for mobility, safety, and long-lasting comfort.",
+    "image": "https://i.postimg.cc/3R0qcGZm/1.png",
+    "category": "Clothing",
+    "duration": "30 minutes",
+    "location": "In-Studio",
+    "isAvailable": true,
+    "maxPetsAllowed": 1
   },
   {
     "serviceId": 2,
@@ -21,9 +23,13 @@
     "price": 30,
     "rating": 4.8,
     "slotsAvailable": 3,
-    "description": "Professional grooming with moisturizing paw balm and winter-safe shampoo.",
+    "description": "Professional grooming with moisturizing paw balm and winter-safe shampoo. Each session includes gentle detangling, coat conditioning, and a warm rinse to protect against dry winter air. We also apply premium paw wax to shield your pet’s feet from snow, salt, and ice. Perfect for keeping your dog clean, soft, and winter-ready.",
     "image": "https://i.postimg.cc/k44r6q9z/winter-grooming-paws-treatment.jpg",
-    "category": "Grooming"
+    "category": "Grooming",
+    "duration": "45 minutes",
+    "location": "Mobile & In-Studio",
+    "isAvailable": true,
+    "maxPetsAllowed": 1
   },
   {
     "serviceId": 3,
@@ -33,9 +39,13 @@
     "price": 40,
     "rating": 4.7,
     "slotsAvailable": 2,
-    "description": "Installation of a cozy heated bed for your pet's winter comfort.",
+    "description": "Installation of a cozy heated bed for your pet's winter comfort. Our team ensures the setup is safe, temperature-controlled, and perfectly placed for your pet’s habits. We use high-quality heating pads with adjustable warmth settings. This service guarantees your pet stays relaxed, warm, and secure during the coldest months.",
     "image": "https://i.postimg.cc/mkpgz80S/Heated-Bed-Setup.jpg",
-    "category": "Accessories"
+    "category": "Accessories",
+    "duration": "1 hour",
+    "location": "Home Service",
+    "isAvailable": true,
+    "maxPetsAllowed": 2
   },
   {
     "serviceId": 4,
@@ -45,9 +55,13 @@
     "price": 20,
     "rating": 4.6,
     "slotsAvailable": 5,
-    "description": "Custom-fitted snow boots to protect your dog's paws from ice and salt.",
+    "description": "Custom-fitted snow boots to protect your dog's paws from ice and salt. Our team ensures a secure fit that won’t slip off during walks. We provide various non-slip sole options to improve traction in snowy conditions. These boots help prevent frostbite, irritation, and cracking while letting your dog enjoy outdoor play comfortably.",
     "image": "https://i.postimg.cc/nLfcDsPp/Snow-Boot-Fitting.jpg",
-    "category": "Clothing"
+    "category": "Clothing",
+    "duration": "25 minutes",
+    "location": "In-Store",
+    "isAvailable": true,
+    "maxPetsAllowed": 1
   },
   {
     "serviceId": 5,
@@ -57,9 +71,13 @@
     "price": 35,
     "rating": 4.9,
     "slotsAvailable": 1,
-    "description": "Personalized diet plan to keep your pet energized during winter months.",
+    "description": "Personalized diet plan to keep your pet energized during winter months. Our experts assess your pet’s nutritional needs based on breed, age, and activity level. We provide a tailored seasonal meal guide to boost immunity and maintain healthy weight. Includes recommendations for safe winter treats and supplements. This consultation ensures your pet stays strong, warm, and healthy even in harsh weather.",
     "image": "https://i.postimg.cc/pT2Wswvf/Winter-Diet-Consultation.jpg",
-    "category": "Health"
+    "category": "Health",
+    "duration": "40 minutes",
+    "location": "Online & In-Studio",
+    "isAvailable": true,
+    "maxPetsAllowed": 1
   },
   {
     "serviceId": 6,
@@ -69,8 +87,44 @@
     "price": 15,
     "rating": 4.5,
     "slotsAvailable": 6,
-    "description": "Supervised indoor playtime to keep your dog active during cold weather.",
+    "description": "Supervised indoor playtime to keep your dog active during cold weather. Our trained staff ensures safe, engaging activities tailored to your dog’s energy level. The session includes interactive toys, obstacle play, and social time with other friendly pets. Perfect for keeping your dog happy, stimulated, and exercised during winter. The play area is climate-controlled, spacious, and designed for fun-filled physical activity.",
     "image": "https://i.postimg.cc/PfSxR5Pv/Indoor-Play-Session.jpg",
-    "category": "Activity"
+    "category": "Activity",
+    "duration": "1 hour",
+    "location": "Indoor Facility",
+    "isAvailable": true,
+    "maxPetsAllowed": 5
+  },
+  {
+    "serviceId": 7,
+    "serviceName": "Winter Fur Conditioning Spa",
+    "providerName": "FurryGlow Spa",
+    "providerEmail": "care@furryglow.com",
+    "price": 45,
+    "rating": 4.8,
+    "slotsAvailable": 3,
+    "description": "A deep-conditioning spa treatment designed to protect your pet’s coat from winter dryness. We use warm essential-oil steam therapy and rich hydrating masks to prevent brittleness and shedding. Each session includes a gentle massage to improve circulation and keep your pet warm and relaxed. Ideal for pets needing extra coat protection during cold months.",
+    "image": "https://i.postimg.cc/bwhzYqJB/7.png",
+    "category": "Grooming",
+    "duration": "50 minutes",
+    "location": "In-Studio",
+    "isAvailable": true,
+    "maxPetsAllowed": 1
+  },
+  {
+    "serviceId": 8,
+    "serviceName": "Warm Winter Walk Pack",
+    "providerName": "SnowPaws Walkers",
+    "providerEmail": "team@snowpaws.com",
+    "price": 22,
+    "rating": 4.7,
+    "slotsAvailable": 4,
+    "description": "Guided outdoor winter walks with proper warm-gear support for your dog. Each walk includes insulated leashes, reflective winter vests, and paw-safe routes to avoid ice and harmful salt. Perfect for dogs needing regular exercise in a safe, monitored environment. Our walkers ensure your dog stays warm, active, and comfortable throughout the session.",
+    "image": "https://i.postimg.cc/cHtzb3cY/2.png",
+    "category": "Activity",
+    "duration": "35 minutes",
+    "location": "Outdoor",
+    "isAvailable": true,
+    "maxPetsAllowed": 3
   }
 ]

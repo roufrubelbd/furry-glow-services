@@ -18,6 +18,8 @@ import "swiper/css/pagination";
 import AuthProvider from "./AuthProvider/AuthProvider.jsx";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute.jsx";
 import ForgetPassword from "./components/ForgetPassword/ForgetPassword.jsx";
+import Pricing from "./components/Pricing/Pricing.jsx";
+import BookNow from "./components/BookNow/BookNow.jsx";
 
 export const AuthContext = createContext(null);
 
@@ -44,12 +46,25 @@ const router = createBrowserRouter([
       },
       {
         path: "/services/:id",
-        element: <PrivateRoute><Details /></PrivateRoute>,
+        element: <Details />,
         loader: () => fetch("/services.json").then((res) => res.json()),
       },
       {
+        path: "/pricing",
+        element: <Pricing />,
+        loader: () => fetch("/services.json").then((res) => res.json()),
+      },
+      {
+        path: "/booknow",
+        element: <BookNow />,
+      },
+      {
         path: "/profile",
-        element: <PrivateRoute><Profile /></PrivateRoute>,
+        element: (
+          <PrivateRoute>
+            <Profile />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/login",

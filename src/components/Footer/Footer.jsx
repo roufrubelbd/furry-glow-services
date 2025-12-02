@@ -1,16 +1,25 @@
 import React from "react";
 import { FiGithub, FiInstagram, FiFacebook, FiMail } from "react-icons/fi";
+import { SiFurrynetwork } from "react-icons/si";
+import { Link } from "react-router";
 
 const Footer = () => {
   return (
-    <footer className="bg-emerald-50 border-t border-emerald-200 mt-10">
+    <footer className="bg-green-50  mt-10">
       <div className="container mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Brand Section */}
         <div>
-          <h2 className="text-2xl font-bold text-emerald-700 mb-3">
-            Pet Winter Care
-          </h2>
-          <p className="text-sm text-emerald-700">
+          <Link
+            className="flex justify-start items-center gap-1 text-green-600 mb-4"
+            to="/"
+          >
+            <SiFurrynetwork size={24} />
+            <h1 className="text-xl md:text-2xl">
+              <span className="">Furry</span>
+              <span className=" font-bold">Glow</span>
+            </h1>
+          </Link>
+          <p className="text-sm">
             Keeping your pets cozy, happy, and healthy through every cold
             season.
           </p>
@@ -18,28 +27,28 @@ const Footer = () => {
 
         {/* Quick Links */}
         <div>
-          <h3 className="text-lg font-semibold text-emerald-700 mb-3">
+          <h3 className="text-lg font-semibold text-green-700 mb-3">
             Quick Links
           </h3>
-          <ul className="space-y-2 text-emerald-600 text-sm">
+          <ul className="space-y-2 text-sm">
             <li>
-              <a href="/" className="hover:text-emerald-900">
+              <a href="/" className="hover:text-green-900">
                 Home
               </a>
             </li>
             <li>
-              <a href="/about" className="hover:text-emerald-900">
-                About Us
+              <a href="/services" className="hover:text-green-900">
+                Services
               </a>
             </li>
             <li>
-              <a href="/tips" className="hover:text-emerald-900">
-                Winter Care Tips
+              <a href="/pricing" className="hover:text-green-900">
+                Pricing
               </a>
             </li>
             <li>
-              <a href="/contact" className="hover:text-emerald-900">
-                Contact
+              <a href="/booknow" className="hover:text-green-900">
+                Book Now
               </a>
             </li>
           </ul>
@@ -47,27 +56,27 @@ const Footer = () => {
 
         {/* Resources */}
         <div>
-          <h3 className="text-lg font-semibold text-emerald-700 mb-3">
+          <h3 className="text-lg font-semibold text-green-700 mb-3">
             Resources
           </h3>
-          <ul className="space-y-2 text-emerald-600 text-sm">
+          <ul className="space-y-2 text-sm">
             <li>
-              <a href="/faq" className="hover:text-emerald-900">
+              <a href="/services" className="hover:text-green-900">
                 FAQs
               </a>
             </li>
             <li>
-              <a href="/blog" className="hover:text-emerald-900">
+              <a href="/services" className="hover:text-green-900">
                 Blog
               </a>
             </li>
             <li>
-              <a href="/privacy" className="hover:text-emerald-900">
+              <a href="/services" className="hover:text-green-900">
                 Privacy Policy
               </a>
             </li>
             <li>
-              <a href="/terms" className="hover:text-emerald-900">
+              <a href="/services" className="hover:text-green-900">
                 Terms of Service
               </a>
             </li>
@@ -76,40 +85,40 @@ const Footer = () => {
 
         {/* Contact & Socials */}
         <div>
-          <h3 className="text-lg font-semibold text-emerald-700 mb-3">
+          <h3 className="text-lg font-semibold text-green-700 mb-3">
             Get in Touch
           </h3>
-          <p className="text-sm text-emerald-700 mb-4">
+          <p className="text-sm  mb-4">
             Have questions? Reach out or follow us online.
           </p>
           <div className="flex space-x-4">
             <a
-              href="mailto:info@petwintercare.com"
-              className="text-emerald-700 hover:text-emerald-900"
+              href="https://github.com/roufrubelbd"
+              className="text-amber-500 hover:text-green-900"
             >
               <FiMail size={20} />
             </a>
             <a
-              href="https://github.com/yourusername"
+              href="https://github.com/roufrubelbd"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-emerald-700 hover:text-emerald-900"
+              className="text-amber-500 hover:text-green-900"
             >
               <FiGithub size={20} />
             </a>
             <a
-              href="https://instagram.com/yourusername"
+              href="https://instagram.com/roufrubelbd"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-emerald-700 hover:text-emerald-900"
+              className="text-amber-500 hover:text-green-900"
             >
               <FiInstagram size={20} />
             </a>
             <a
-              href="https://facebook.com/yourusername"
+              href="https://facebook.com/roufrubelbd"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-emerald-700 hover:text-emerald-900"
+              className="text-amber-500 hover:text-green-900"
             >
               <FiFacebook size={20} />
             </a>
@@ -118,8 +127,8 @@ const Footer = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="bg-emerald-100 py-3 text-center text-sm text-emerald-700">
-        &copy; {new Date().getFullYear()} WARMPAWS @Pet Winter Care. All rights
+      <div className="bg-green-100 py-3 text-center text-sm text-green-700">
+        &copy; {new Date().getFullYear()} FurryGrow @Pet Winter Care. All rights
         reserved.
       </div>
     </footer>

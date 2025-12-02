@@ -1,11 +1,10 @@
-// src/components/HomeBanner.jsx
-import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Link } from "react-router";
+import { MdOutlineExplore } from "react-icons/md";
 
 const HomeBanner = () => {
   const slides = [
@@ -30,35 +29,35 @@ const HomeBanner = () => {
   ];
 
   return (
-    <div className="w-full mb-20">
+    <div className="w-full md:h-[60vh] mb-6  md:w-11/12 md:mx-auto">
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         navigation
         pagination={{ clickable: true }}
         autoplay={{ delay: 3000, disableOnInteraction: false }}
         loop={true}
-        className="mySwiper"
+        className="mySwiper h-full"
       >
         {slides.map((slide) => (
           <SwiperSlide key={slide.id}>
-            <div className="relative w-full h-[70vh] md:h-[80vh] lg:h-[80vh]">
+            <div className="relative w-full h-full">
               <img
                 src={slide.image}
                 alt={slide.title}
                 className="w-full h-full object-cover"
               />
-              <div className="bg-black/40 absolute inset-0 ">
-                <div className="absolute inset-0   flex flex-col justify-center items-center text-center text-white px-6 z-10">
-                  <h2 className="text-3xl md:text-5xl font-bold mb-3 animate__animated animate__fadeInDown">
+              <div className="bg-black/50 absolute inset-0 ">
+                <div className="absolute inset-0   flex flex-col justify-center items-center text-center text-amber-200 px-6 z-10">
+                  <h2 className="text-2xl md:text-5xl font-bold mb-3 animate__animated animate__fadeInDown">
                     {slide.title}
                   </h2>
                   <p className="text-lg md:text-xl animate__animated animate__fadeInUp">
                     {slide.subtitle}
                   </p>
                   <Link to="/services">
-                    <button className="btn bg-emerald-500 mt-5  text-white hover:bg-emerald-600">
-                    Explore Now
-                  </button>
+                    <button className="btn btn-sm bg-amber-200 mt-5 text-green-600  hover:text-white hover:bg-green-600">
+                      <MdOutlineExplore size={14} /> Explore Now
+                    </button>
                   </Link>
                 </div>
               </div>

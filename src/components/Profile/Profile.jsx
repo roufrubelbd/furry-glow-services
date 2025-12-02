@@ -1,6 +1,8 @@
 import React, { use } from "react";
 import { AuthContext } from "../../main";
 import toast from "react-hot-toast";
+import { FaRegEdit } from "react-icons/fa";
+import { IoClose } from "react-icons/io5";
 
 const Profile = () => {
   const { user, updateUserProfile } = use(AuthContext);
@@ -24,12 +26,12 @@ const Profile = () => {
   };
 
   return (
-    <div className="bg-emerald-50 w-11/12 mx-auto flex flex-col justify-center items-center py-2 md:py-10 lg:py-10 h-screen">
-      <div className="p-6 bg-base-100 rounded-2xl border border-emerald-200 flex flex-col justify-center items-center text-center space-y-4">
-        <h3 className="font-bold text-emerald-600">My profile page</h3>
+    <div className="bg-green-50 w-11/12 mx-auto flex flex-col justify-center items-center py-2 md:py-10 lg:py-10 h-screen">
+      <div className="p-6 bg-base-100 rounded-2xl border border-green-200 flex flex-col justify-center items-center text-center space-y-4">
+        <h3 className="font-bold text-amber-600">My profile page</h3>
 
         <img
-          className="w-24 h-24 mx-auto rounded-full border border-emerald-300"
+          className="w-24 h-24 mx-auto rounded-full border border-green-200"
           src={user?.photoURL}
           alt="Avatar"
         />
@@ -42,17 +44,17 @@ const Profile = () => {
         {/* DaisyUI Modal Trigger */}
         <label
           htmlFor="update_modal"
-          className="btn bg-emerald-500 text-white  hover:bg-emerald-600"
+          className="btn btn-sm bg-amber-200 text-green-600 hover:text-white  hover:bg-emerald-600"
         >
-          Update Profile
+          <FaRegEdit /> Update Profile
         </label>
       </div>
 
       {/* DaisyUI Modal */}
       <input type="checkbox" id="update_modal" className="modal-toggle" />
       <div className="modal">
-        <div className="modal-box bg-blue-100 text-left">
-          <h3 className="font-bold text-lg text-blue-600 mb-4">
+        <div className="modal-box bg-amber-50 text-left">
+          <h3 className="font-bold text-lg text-amber-600 mb-4">
             Update Your Profile
           </h3>
           <form onSubmit={handleProfileUpdate} className="space-y-3">
@@ -84,15 +86,15 @@ const Profile = () => {
             <div className="modal-action">
               <button
                 type="submit"
-                className="btn bg-blue-500 text-white hover:bg-blue-600"
+                className="btn bg-amber-200 text-green-600 hover:text-white hover:bg-green-600"
               >
-                Save Changes
+                <FaRegEdit />Save Changes
               </button>
               <label
                 htmlFor="update_modal"
-                className="btn bg-emerald-500 text-white hover:bg-emerald-600"
+                className="btn bg-amber-200 text-green-600 hover:text-white hover:bg-green-600"
               >
-                Close
+                <IoClose />Close
               </label>
             </div>
           </form>

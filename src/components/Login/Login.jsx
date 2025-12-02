@@ -51,9 +51,9 @@ const Login = () => {
   };
 
   return (
-    <div className=" bg-emerald-50  text-center min-h-screen flex items-center justify-center">
-      <div className="p-6 bg-white rounded-lg shadow-sm space-y-3 w-4/5 md:w-1/3 lg:w-1/3 mx-auto border border-base-300">
-        <h1 className="text-2xl font-bold text-emerald-500">Login here!</h1>
+    <div className=" text-center min-h-screen flex items-center justify-center">
+      <div className="p-6 bg-base-100 rounded-lg shadow-lg space-y-3 w-4/5 md:w-1/3 lg:w-1/3 mx-auto border border-base-300">
+        <h1 className="text-2xl font-bold text-green-600">Login here!</h1>
         <form onSubmit={handleLogin} className=" bg-base-100  space-y-2">
           <input
             type="email"
@@ -73,7 +73,7 @@ const Login = () => {
             <button
               type="button"
               onClick={() => setShowPassword(!showPassword)}
-              className="absolute right-3 top-3 text-gray-500 hover:text-emerald-600"
+              className="absolute right-3 top-3 text-gray-500 hover:text-green-600"
             >
               {showPassword ? <EyeOffIcon size={20} /> : <EyeIcon size={20} />}
             </button>
@@ -87,7 +87,7 @@ const Login = () => {
               Forgot password?
             </Link>
           </div>
-          <button className="btn bg-emerald-400 hover:bg-emerald-600 text-white">
+          <button className="btn bg-amber-200 text-green-600 hover:text-white hover:bg-green-600 ">
             Login
           </button>
         </form>

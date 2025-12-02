@@ -1,8 +1,10 @@
 import React, { use } from "react";
 import { Link, NavLink } from "react-router";
-import logo from "../../assets/warm_paws_logo.png";
 import { AuthContext } from "../../main";
 import toast from "react-hot-toast";
+import { FiLogOut } from "react-icons/fi";
+import { SiFurrynetwork } from "react-icons/si";
+import { GoSignIn } from "react-icons/go";
 
 const Navbar = () => {
   const { user, logOutUser } = use(AuthContext);
@@ -21,7 +23,7 @@ const Navbar = () => {
     <>
       <NavLink
         className={({ isActive }) =>
-          isActive ? "text-blue-600 underline font-bold" : ""
+          isActive ? "text-green-600 underline font-bold" : ""
         }
         to="/"
       >
@@ -31,7 +33,7 @@ const Navbar = () => {
       </NavLink>
       <NavLink
         className={({ isActive }) =>
-          isActive ? "text-blue-600 underline font-bold" : ""
+          isActive ? "text-green-600 underline font-bold" : ""
         }
         to="/services"
       >
@@ -41,7 +43,28 @@ const Navbar = () => {
       </NavLink>
       <NavLink
         className={({ isActive }) =>
-          isActive ? "text-blue-600 underline font-bold" : ""
+          isActive ? "text-green-600 underline font-bold" : ""
+        }
+        to="/pricing"
+      >
+        <li>
+          <a>Pricing</a>
+        </li>
+      </NavLink>
+      <NavLink
+        className={({ isActive }) =>
+          isActive ? "text-green-600 underline font-bold" : ""
+        }
+        to="/booknow"
+      >
+        <li>
+          <a>Book Now</a>
+        </li>
+      </NavLink>
+      {
+        user && <NavLink
+        className={({ isActive }) =>
+          isActive ? "text-green-600 underline font-bold" : ""
         }
         to="/profile"
       >
@@ -49,11 +72,12 @@ const Navbar = () => {
           <a>My Profile</a>
         </li>
       </NavLink>
+      }
     </>
   );
   return (
-    <div className="w-11/12 mx-auto">
-      <div className="navbar bg-base-100">
+    <div className=" bg-green-50 sticky top-0 z-50 h-16">
+      <div className="navbar w-11/12 mx-auto">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -75,15 +99,14 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex="-1"
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-3 w-52 p-2 shadow"
             >
               {menus}
             </ul>
           </div>
-          <Link to="/">
-            <a className="text-xl">
-              <img src={logo} alt="logo" className="h-12" />
-            </a>
+          <Link className="flex justify-start items-center gap-1 text-green-600" to="/">
+          <SiFurrynetwork size={24} />
+          <h1 className="text-xl md:text-2xl"><span className="">Furry</span><span className=" font-bold">Glow</span></h1>
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
@@ -92,30 +115,28 @@ const Navbar = () => {
 
         {user ? (
           <div className="navbar-end flex gap-2 items-center">
-            <button
-              className="btn btn-outline btn-sm text-blue-600"
-              onClick={handleLogout}
-            >
-              Logout
-            </button>
+            
             <div
               className="tooltip tooltip-left cursor-pointer"
               data-tip={user?.displayName || "User"}
             >
               <img
                 src={user?.photoURL}
-                className="w-10 h-10 rounded-full"
+                className="w-7 h-7 rounded-full"
                 alt="avatar"
               />
             </div>
+            <button
+              className="btn btn-sm bg-amber-200 text-green-600 hover:bg-green-600 hover:text-white"
+              onClick={handleLogout}
+            > <FiLogOut />
+              Logout
+            </button>
           </div>
         ) : (
           <div className="navbar-end flex gap-2 items-center">
             <Link to="/login">
-              <a className="btn btn-outline btn-sm text-blue-600">Login</a>
-            </Link>
-            <Link to="/register">
-              <a className="btn btn-outline btn-sm text-blue-600">Register</a>
+              <a className="btn btn-sm bg-amber-200 text-green-600 hover:bg-green-600 hover:text-white">Login <GoSignIn /></a>
             </Link>
           </div>
         )}

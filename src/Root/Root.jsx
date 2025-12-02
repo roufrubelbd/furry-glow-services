@@ -17,7 +17,7 @@ const Root = () => {
       {isLoading ? (
         <Spinner />
       ) : (
-        <div className="min-h-[calc(100vh-285px)]">
+        <div className="min-h-[calc(100vh-285px)] pt-4">
           <Outlet />
         </div>
       )}

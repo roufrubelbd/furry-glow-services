@@ -8,7 +8,7 @@ import Stories from "../Stories/Stories";
 const Home = () => {
   
   return (
-    <div className="min-h-screen bg-base-100 w-11/12 mx-auto">
+    <div className="bg-base-100">
       <HomeBanner />
       <Services />
       <Tips />
