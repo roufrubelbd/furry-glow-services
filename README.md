@@ -4,9 +4,10 @@ FurryGlow is a modern, responsive winter-season pet service website built with R
 
 # Live Demo
 
-(Add your live link here once deployed)
+[https://furry-glow-services.web.app]
 
 # Features
+
 🐶 Pet Winter Care Services
 
 Displays multiple winter-specific pet services.
@@ -65,7 +66,6 @@ All booked services are stored under:
 
 localStorage["bookings"]
 
-
 This allows users to keep their bookings even after page reloads.
 
 # Modern UI/UX
@@ -79,6 +79,7 @@ Smooth animations using Framer Motion
 Clean icons via React Icons & Lucide React
 
 # Tech Stack
+
 Frontend
 
 ⚛️ React 19
@@ -104,6 +105,7 @@ Frontend
 🎡 Swiper.js (for sliders)
 
 # Project Structure
+
 src/
 │── components/
 │── firebase/
@@ -113,21 +115,23 @@ src/
 │── main.jsx
 
 # Installation
-git clone <repo-url>
-cd furryglow
+
+git clone [https://github.com/roufrubelbd/furry-glow-services]
+cd furry-glow-services
 npm install
 npm run dev
 
 # Booking Data Structure (LocalStorage)
+
 {
-  "userName": "John Doe",
-  "userEmail": "john@example.com",
-  "serviceId": 3,
-  "serviceName": "Winter Grooming",
-  "providerName": "Snow Pet Care",
-  "price": 45,
-  "rating": 4.8,
-  "date": "12/02/2025, 3:15 PM"
+"userName": "John Doe",
+"userEmail": "john@example.com",
+"serviceId": 3,
+"serviceName": "Winter Grooming",
+"providerName": "Snow Pet Care",
+"price": 45,
+"rating": 4.8,
+"date": "12/02/2025, 3:15 PM"
 }
 
 # Future Improvements
@@ -140,7 +144,8 @@ Admin panel to manage services
 
 Payment gateway integration
 
-👨# Developer
+# Developer
 
 Your Name
-(Add portfolio link here)
+[Mohammad Abdur Rouf]
+[https://github.com/roufrubelbd]
