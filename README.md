@@ -2,11 +2,11 @@
 
 FurryGlow is a modern, responsive winter-season pet service website built with React, featuring service listings, detailed product pages, booking functionality with Local Storage, sorting filters, Firebase authentication, and a beautiful UI powered by Tailwind & DaisyUI.
 
-# Live Demo
+## Live Demo
 
 [https://furry-glow-services.web.app]
 
-# Features
+## Features
 
 🐶 Pet Winter Care Services
 
@@ -28,7 +28,7 @@ Duration and max pets allowed
 
 Availability status
 
-# Book Service Functionality
+## Book Service Functionality
 
 Users can book a service by submitting:
 
@@ -46,7 +46,7 @@ Timestamp
 
 Success notification shown using react-hot-toast.
 
-# Sorting Services
+## Sorting Services
 
 Users can sort other services on the details page by:
 
@@ -60,7 +60,7 @@ Users can sort other services on the details page by:
 
 🔤 Z → A sorting
 
-# Local Storage Booking System
+## Local Storage Booking System
 
 All booked services are stored under:
 
@@ -68,7 +68,7 @@ localStorage["bookings"]
 
 This allows users to keep their bookings even after page reloads.
 
-# Modern UI/UX
+## Modern UI/UX
 
 Fully responsive
 
@@ -78,7 +78,7 @@ Smooth animations using Framer Motion
 
 Clean icons via React Icons & Lucide React
 
-# Tech Stack
+## Tech Stack
 
 Frontend
 
@@ -94,7 +94,7 @@ Frontend
 
 🧭 React Router 7
 
-# Additional Tools
+## Additional Tools
 
 🔥 Firebase (for future auth/database)
 
@@ -104,7 +104,7 @@ Frontend
 
 🎡 Swiper.js (for sliders)
 
-# Project Structure
+## Project Structure
 
 src/
 │── components/
@@ -114,14 +114,14 @@ src/
 │── App.jsx
 │── main.jsx
 
-# Installation
+## Installation
 
 git clone [https://github.com/roufrubelbd/furry-glow-services]
 cd furry-glow-services
 npm install
 npm run dev
 
-# Booking Data Structure (LocalStorage)
+## Booking Data Structure (LocalStorage)
 
 {
 "userName": "John Doe",
@@ -134,7 +134,7 @@ npm run dev
 "date": "12/02/2025, 3:15 PM"
 }
 
-# Future Improvements
+## Future Improvements
 
 Firebase database for storing bookings permanently
 
@@ -144,8 +144,7 @@ Admin panel to manage services
 
 Payment gateway integration
 
-# Developer
+## Developer
 
-Your Name
 [Mohammad Abdur Rouf]
 [https://github.com/roufrubelbd]
